@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>EcomR</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>eCom_r</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <script src="//code.jqeury.com/jquery-2.0.3.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div>
+      <header>
+        <h1><span class="accent">e</span>Com</h1>
+        <nav>
+          <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/about">about</a></li>
+            <li><a href="/contact">contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <footer>
+        <p>&copy; 2014 <span class="logo"><span class="accent">e</span>Com</span></p>
+      </footer>
+    </div>
+  </body>
 </html>
