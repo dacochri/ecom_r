@@ -341,7 +341,7 @@ table{
   }
 }
 
-// General Classes
+// General
 
 .accent{
   color: #FFF;
@@ -351,4 +351,9 @@ span.logo{
   color: $main-color;
   font-size: 4rem;
   font-family: $title-font;
+}
+
+#notice{
+  background-color: #2D2D2D;
+  color: $main-color;
 }
