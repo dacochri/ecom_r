@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @category.category_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<section>
+  <h2>Show Category <%= @category.id %></h2>
+  <% unless notice.blank? %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+  <dl>
+    <dt>Category</dt> <dd><%= Category.find(@category.category_id).name %></dd>
+    <dt>Name</dt> <dd><%= @category.name %></dd>
+  </dl>
+  <p><%= link_to 'Edit', edit_category_path(@category) %> <%= link_to 'Back', categories_path %></p>
+</section>

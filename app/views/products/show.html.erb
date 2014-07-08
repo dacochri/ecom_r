@@ -1,39 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @product.image %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Manufacturer:</strong>
-  <%= @product.manufacturer %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @product.quantity %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<section>
+  <h2>Show Product <%= @product.id %></h2>
+  <% unless notice.blank? %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+  <dl>
+    <dt>Category</dt> <dd><%= Category.find(@product.category_id).name %></dd>
+    <dt>Name</dt> <dd><%= @product.name %></dd>
+    <dt>Image</dt> <dd><%= @product.image %></dd>
+    <dt>Price</dt> <dd>$<%= @product.price %></dd>
+    <dt>Manufacturer</dt> <dd><%= @product.manufacturer %></dd>
+    <dt>Quantity</dt> <dd><%= @product.quantity %></dd>
+    <dt>Description</dt> <dd><%= @product.description %></dd>
+  </dl>
+  <p><%= link_to 'Edit', edit_product_path(@product) %> <%= link_to 'Back', products_path %></p>
+</section>
