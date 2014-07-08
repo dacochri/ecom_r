@@ -1,37 +1,37 @@
-<h1>Listing products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Name</th>
-      <th>Image</th>
-      <th>Price</th>
-      <th>Manufacturer</th>
-      <th>Quantity</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
+<section>
+  <h2>Listing Products</h2>
+  <p><%= link_to 'New Product', new_product_path %></p>
+  <table>
+    <thead>
       <tr>
-        <td><%= product.category_id %></td>
-        <td><%= product.name %></td>
-        <td><%= product.image %></td>
-        <td><%= product.price %></td>
-        <td><%= product.manufacturer %></td>
-        <td><%= product.quantity %></td>
-        <td><%= product.description %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">Manufacturer</th>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Image</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Description</th>
+        <th scope="col"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.manufacturer %></td>
+          <td><%= product.name %></td>
+          <% category = Category.find(product.category_id) %>
+          <td><%= category.name %></td>
+          <td><%= link_to product.image, "assets/#{product.image}" %></td>
+          <td>$<%= product.price %></td>
+          <td><%= product.quantity %></td>
+          <td><%= product.description %></td>
+          <td>
+            <%= link_to 'Show', product %>
+            <%= link_to 'Edit', edit_product_path(product) %>
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: "Are you sure you want to delete: #{product.name}?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
