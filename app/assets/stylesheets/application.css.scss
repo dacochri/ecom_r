@@ -19,7 +19,6 @@ $large: 2rem;
 
 $title-font: "Jolly Lodger", serif;
 $body-font: "Alegreya Sans", Arial, Helvetica, sans-serif;
-$link-font: "Lora", serif;
 
 // F00 FF4000 FF8000 FFBF00 FF0 BFFF00 80FF00
 // 40FF00 0F0 00FF40 00FF80 00FFBF 0FF 00BFFF
@@ -29,7 +28,6 @@ $main-color-on-white: darken($main-color, 0%);
 
 @import url(//fonts.googleapis.com/css?family=Jolly+Lodger);
 @import url(//fonts.googleapis.com/css?family=Alegreya+Sans);
-@import url(//fonts.googleapis.com/css?family=Lora);
 
 *{
   margin: 0;
@@ -116,7 +114,6 @@ header, footer{
 
   a{
     text-decoration: none;
-    font-family: $link-font;
     
     &:link, &:visited{
       color: #616161;
@@ -148,12 +145,11 @@ header{
     ul{
       display: inline;
       position: relative;
-      top: -1rem;
+      top: -0.75rem;
 
       li{
         display: inline;
         margin-right: $medium;
-        letter-spacing: -0.1rem;
 
         &:last{
           margin-right: 0;
