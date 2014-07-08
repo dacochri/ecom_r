@@ -61,8 +61,8 @@ body{
   }
 }
 
-div, p, ul{
-  margin: $small;
+div, p, ul, ol, dl{
+  margin: $small 0;
   padding: $small;
 }
 
@@ -105,6 +105,32 @@ ol{
   
   li{
     list-style-type: decimal;
+  }
+}
+
+dl{
+
+  dt{
+    font-weight: bold;
+    float: left;
+    clear: both;
+
+    &:after{
+      content: ":";
+    }
+  }
+
+  dd{
+    float: left;
+    margin-left: 0.5rem;
+  }
+
+  &:after{
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
   }
 }
 
