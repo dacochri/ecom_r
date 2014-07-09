@@ -10,15 +10,18 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    
   end
 
   # GET /categories/new
   def new
     @category = Category.new
+    render :layout => 'form'
   end
 
   # GET /categories/1/edit
   def edit
+    render :layout => 'form'
   end
 
   # POST /categories
