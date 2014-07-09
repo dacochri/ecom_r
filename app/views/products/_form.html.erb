@@ -11,7 +11,7 @@
   <% end %>
 
   <%= f.label :category_id %>
-  <%= f.number_field :category_id %>
+  <%= f.collection_select :category_id, @categories, :id, :name, { :selected => @categories.first.id } %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :image %>
@@ -23,6 +23,6 @@
   <%= f.label :quantity %>
   <%= f.number_field :quantity %>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_area :description, :size => '20x5' %>
   <%= f.submit %>
 <% end %>
