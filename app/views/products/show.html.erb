@@ -3,14 +3,19 @@
   <% unless notice.blank? %>
     <p id="notice"><%= notice %></p>
   <% end %>
-  <dl>
+  <% unless @product.image.blank? %>
+    <%= image_tag @product.image, :alt => @product.name, :class => 'product-image' %>
+  <% else %>
+    <div class="image-not-found">?</div>
+  <% end %>
+  <dl class="left">
     <dt>Category</dt> <dd><%= Category.find(@product.category_id).name %></dd>
     <dt>Name</dt> <dd><%= @product.name %></dd>
-    <dt>Image</dt> <dd><%= @product.image %></dd>
     <dt>Price</dt> <dd>$<%= @product.price %></dd>
     <dt>Manufacturer</dt> <dd><%= @product.manufacturer %></dd>
     <dt>Quantity</dt> <dd><%= @product.quantity %></dd>
     <dt>Description</dt> <dd><%= @product.description %></dd>
   </dl>
+  <div class="clear"></div>
   <p><%= link_to 'Edit', edit_product_path(@product) %> <%= link_to 'Back', products_path %></p>
 </section>

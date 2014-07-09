@@ -26,6 +26,14 @@ $body-font: "Alegreya Sans", Arial, Helvetica, sans-serif;
 $main-color: #FFBF00;
 $main-color-on-white: darken($main-color, 0%);
 
+@mixin clear-after{
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
 @import url(//fonts.googleapis.com/css?family=Jolly+Lodger);
 @import url(//fonts.googleapis.com/css?family=Alegreya+Sans);
 
@@ -123,14 +131,6 @@ dl{
   dd{
     float: left;
     margin-left: 0.5rem;
-  }
-
-  &:after{
-    content: ".";
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
   }
 }
 
@@ -343,6 +343,18 @@ table{
 
 // General
 
+.left{
+  float: left;
+}
+
+.right{
+  flaot: right;
+}
+
+.clear{
+  clear: both;
+}
+
 .accent{
   color: #FFF;
 }
@@ -356,4 +368,22 @@ span.logo{
 #notice{
   background-color: #2D2D2D;
   color: $main-color;
+}
+
+.product-image{
+  float: left;
+}
+
+.image-not-found{
+  background-color: #5A5A5A;
+  color: #CCC;
+  border: 1rem solid #2D2D2D;
+  border-radius: 5rem;
+  display: inline-block;
+  float: left;
+  font-size: 6rem;
+  font-weight: bold;
+  font-family: $title-font;
+  padding: 0.25rem 3rem;
+  margin: 2.75rem $small 2.75rem 0;
 }
