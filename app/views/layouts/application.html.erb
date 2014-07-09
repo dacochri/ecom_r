@@ -15,10 +15,15 @@
         <nav>
           <ul>
             <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>
+        <%= form_tag '/search', method: 'GET' do %>
+          <%= text_field_tag :search, nil, { :required => 'required', :placeholder => 'Search' } %>
+          <%= submit_tag 'Search' %>
+        <% end %>
       </header>
     </div>
     <div class="extend">

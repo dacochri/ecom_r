@@ -187,11 +187,14 @@ header{
   nav{
     display: inline;
     text-transform: lowercase;
+    position: relative;
+    top: -0.75rem;
+    left: 3rem;
     
     ul{
       display: inline;
-      position: relative;
-      top: -0.75rem;
+      margin: 0;
+      padding: 0;
 
       li{
         display: inline;
@@ -200,6 +203,46 @@ header{
         &:last{
           margin-right: 0;
         }
+      }
+    }
+  }
+
+  form{
+    border: 0;
+    background-color: transparent;
+    margin: 1rem 0;
+    width: auto;
+    display: inline-block;
+    float: right;
+    
+    #search, input[type="submit"]{
+      margin: 0;
+      border: 0.1rem solid $accent-color;
+      color: $main-color;
+      font-size: 1.4rem;
+      display: inline-block;
+    }
+
+    #search{
+      padding: 0.5rem;
+      width: 32rem;
+      box-shadow: none;
+      background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+    }
+
+    input[type="submit"]{
+      padding: 0.4rem 0.5rem;
+      background: url("search.png") no-repeat scroll center center rgba(0, 0, 0, 0.3);
+      transition: none;
+      border-radius: 0 0.4rem 0.4rem 0;
+      text-indent: -99.9rem;
+      width: 3rem;
+      position: relative;
+      left: -0.4rem;
+
+      &:hover, &:active, &:focus{
+        border: 0.1rem solid $accent-color;
+        background: url("search.png") no-repeat scroll center center rgba(0, 0, 0, 0.3);
       }
     }
   }

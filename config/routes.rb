@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :products
   resources :categories
   
+  get 'blog' => 'index#blog', :as => :blog
+  get 'search' => 'index#search', :as => :search
   get 'about' => 'index#about', :as => :about
   get 'contact' => 'index#contact', :as => :contact
 
