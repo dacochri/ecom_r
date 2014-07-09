@@ -16,11 +16,13 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+    @categories = Category.all
     render :layout => 'form'
   end
 
   # GET /categories/1/edit
   def edit
+    @categories = Category.all
     render :layout => 'form'
   end
 
