@@ -4,7 +4,7 @@
     <p id="notice"><%= notice %></p>
   <% end %>
   <dl>
-    <dt>Category</dt> <dd><%= Category.find(@category.category_id).name %></dd>
+    <dt>Category</dt> <dd><%= Category.find(@category.category_id).name unless @category.category_id.blank? %></dd>
     <dt>Name</dt> <dd><%= @category.name %></dd>
   </dl>
   <p><%= link_to 'Edit', edit_category_path(@category) %> <%= link_to 'Back', categories_path %></p>
