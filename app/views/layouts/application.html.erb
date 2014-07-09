@@ -9,22 +9,26 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div>
+    <div class="extend header-footer">
       <header>
-        <h1><span class="accent">e</span>Com</h1>
+        <h1><span>e</span>Com</h1>
         <nav>
           <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/about">about</a></li>
-            <li><a href="/contact">contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>
       </header>
+    </div>
+    <div class="extend">
       <div id="content">
         <%= yield %>
       </div>
+    </div>
+    <div class="extend header-footer">
       <footer>
-        <p>&copy; 2014 <span class="logo"><span class="accent">e</span>Com</span></p>
+        <p>&copy; 2014 <span class="logo"><span>e</span>Com</span></p>
       </footer>
     </div>
   </body>

@@ -20,10 +20,14 @@ $large: 2rem;
 $title-font: "Jolly Lodger", serif;
 $body-font: "Alegreya Sans", Arial, Helvetica, sans-serif;
 
+// #5F9FA8 - Light Blue
+// #9C673A - Gold
+
 // F00 FF4000 FF8000 FFBF00 FF0 BFFF00 80FF00
 // 40FF00 0F0 00FF40 00FF80 00FFBF 0FF 00BFFF
 // 0080FF 0040FF 00F 4000FF 8000FF BF00FF F0F
-$main-color: #FFBF00;
+$main-color: #5F9FA8;
+$accent-color: #9C673A;
 $main-color-on-white: darken($main-color, 0%);
 
 @mixin clear-after{
@@ -50,12 +54,6 @@ body{
   font-family: $body-font;
   font-size: 1.8rem;
   
-  & > div{
-    width: 102.4rem;
-    margin: 0 auto;
-    padding: 0;
-  }
-
   &.form{
     background: #3E3E3E url("../img/bg-square.png") repeat top left;
     
@@ -134,6 +132,17 @@ dl{
   }
 }
 
+// Content Areas
+
+.extend{
+  margin: 0;
+  padding: 0;
+}
+
+.extend.header-footer{
+  background-color: #2D2D2D;
+}
+
 header, footer{
   background-color: #2D2D2D;
   color: #999;
@@ -152,6 +161,8 @@ header, footer{
 }
 
 header, #content, footer{
+  width: 102.4rem;
+  margin: 0 auto;
   padding: $small;
 }
 
@@ -163,10 +174,15 @@ header{
     font-family: $title-font;
     display: inline;
     font-weight: normal;
+
+    span{
+      color: $accent-color;
+    }
   }
 
   nav{
     display: inline;
+    text-transform: lowercase;
     
     ul{
       display: inline;
@@ -355,14 +371,14 @@ table{
   clear: both;
 }
 
-.accent{
-  color: #FFF;
-}
-
 span.logo{
   color: $main-color;
   font-size: 4rem;
   font-family: $title-font;
+
+  span{
+    color: $accent-color;
+  }
 }
 
 #notice{
