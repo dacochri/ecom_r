@@ -130,6 +130,10 @@ dl{
     float: left;
     margin-left: 0.5rem;
   }
+
+  &:after{
+    @include clear-after;
+  }
 }
 
 // Content Areas
