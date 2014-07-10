@@ -1,3 +1,4 @@
+$mini: 0.25rem;
 $small: 0.5rem;
 $medium: 1rem;
 $large: 2rem;
@@ -23,6 +24,7 @@ $main-color-on-white: darken($main-color, 0%);
 #categories{
   background-color: #333;
   width: 12.5rem;
+  padding-bottom: 0.2rem;
 
   h2{
     padding: $small;
@@ -32,28 +34,36 @@ $main-color-on-white: darken($main-color, 0%);
   }
 
   ul{
+    padding: 0;
     
     li{
       list-style-type: none;
       font-size: 2rem;
       color: $accent-color;
-      
-      // Maybe li:child(y)
-      // top = 10rem - (10 * y)
+      padding: $mini $small;
+      height: 2.5rem;
+      cursor: pointer;
+
+      &:hover, &:active, &:focus{
+        background-color: lighten(#333, 10%);
+
+        & ul{
+          visibility: visible;
+        }
+      }
 
       ul{
         background-color: lighten(#2D2D2D, 10%);
-        width: 10rem;
+        width: 14rem;
         position: relative;
         left: 12rem;
-        top: -3.4rem;
+        top: -3.2rem;
+        visibility: hidden;
 
         li{
-          display: inline;
-          margin-right: $small;
-
-          &:last-child{
-            margin-right: 0;
+          
+          &:hover, &:active, &:focus{
+            background-color: lighten(#2D2D2D, 15%);
           }
         }
       }
