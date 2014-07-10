@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+$mini: 0.25rem;
 $small: 0.5rem;
 $medium: 1rem;
 $large: 2rem;
@@ -391,7 +392,7 @@ table{
     border-bottom: 0.1rem dotted #000;
     transition: none;
     color: #000;
-    padding: $small - 0.25rem;
+    padding: $small - $mini;
     margin: 0;
     width: auto;
     font-size: 1.4rem;
@@ -447,6 +448,6 @@ span.logo{
   font-size: 6rem;
   font-weight: bold;
   font-family: $title-font;
-  padding: 0.25rem 3rem;
+  padding: $mini 3rem;
   margin: 2.75rem $small 2.75rem 0;
 }
