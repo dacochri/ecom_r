@@ -1,3 +1,15 @@
-<section>
-  <h2>index/index</h2>
+<section id="categories">
+  <h2>Categories</h2>
+  <ul>
+    <% @top_level_categories.each do |tlc| %>
+      <li><%= tlc.name %>
+      <% @sub_categories = Category.where(category_id: tlc.id) %>
+        <% unless @sub_categories.blank? %><ul><% end %>
+        <% @sub_categories.each do |sc| %>
+          <li><%= sc.name %></li>
+        <% end %>
+        <% unless @sub_categories.blank? %></ul><% end %>
+      </li>
+    <% end %>
+  </ul>
 </section>
