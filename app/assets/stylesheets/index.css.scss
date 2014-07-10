@@ -1,3 +1,62 @@
-// Place all the styles related to the index controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$small: 0.5rem;
+$medium: 1rem;
+$large: 2rem;
+
+$title-font: "Jolly Lodger", serif;
+$body-font: "Alegreya Sans", Arial, Helvetica, sans-serif;
+
+$main-color: #5F9FA8;
+$accent-color: #9C673A;
+$main-color-on-white: darken($main-color, 0%);
+
+@mixin clear-after{
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+@import url(//fonts.googleapis.com/css?family=Jolly+Lodger);
+@import url(//fonts.googleapis.com/css?family=Alegreya+Sans);
+
+#categories{
+  background-color: #333;
+  width: 12.5rem;
+
+  h2{
+    padding: $small;
+    font-size: 2.4rem;
+    background-color: #2D2D2D;
+    color: $main-color;
+  }
+
+  ul{
+    
+    li{
+      list-style-type: none;
+      font-size: 2rem;
+      color: $accent-color;
+      
+      // Maybe li:child(y)
+      // top = 10rem - (10 * y)
+
+      ul{
+        background-color: lighten(#2D2D2D, 10%);
+        width: 10rem;
+        position: relative;
+        left: 12rem;
+        top: -3.4rem;
+
+        li{
+          display: inline;
+          margin-right: $small;
+
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
