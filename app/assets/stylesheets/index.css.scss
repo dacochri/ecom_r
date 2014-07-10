@@ -33,6 +33,11 @@ $main-color-on-white: darken($main-color, 0%);
     color: $main-color;
   }
 
+  a{
+    color: $accent-color !important;
+    border: 0 !important;
+  }
+
   ul{
     padding: 0;
     
@@ -42,7 +47,6 @@ $main-color-on-white: darken($main-color, 0%);
       color: $accent-color;
       padding: $mini $small;
       height: 2.5rem;
-      cursor: pointer;
 
       &:hover, &:active, &:focus{
         background-color: lighten(#333, 10%);
