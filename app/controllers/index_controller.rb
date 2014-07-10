@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
   def index
-
+    @top_level_categories = Category.where(category_id: nil)
   end
 
   def blog
