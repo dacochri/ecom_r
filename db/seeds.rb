@@ -16,4 +16,4 @@ Category.create(category_id: nil, name: 'Shoes')
 Category.create(category_id: nil, name: 'Accessories')
   Category.create(category_id: 16, name: 'Watches')
 
-Product.create(category_id: 1, name: 'Galaxy S2', image: 'galaxys2.png', price: '599.99', manufacturer: 'Samsung', quantity: 3, description: 'Smartphone')
+Product.create(category_id: 2, name: 'Slim Fit Shirt in Stretch Cotton Poplin', image: '38389881bd.jpg', price: '507.00', manufacturer: 'Emporio Armani', quantity: 1, description: 'Composition: 78% Cotton, 28% Polyamide, 2% Elastane')
