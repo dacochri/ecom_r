@@ -1,0 +1,13 @@
+<section>
+  <h2>Show Slider <%= @slider.id %></h2>
+  <% unless notice.blank? %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+  <%= image_tag "sliders/#{@slider.image}", :alt => @slider.title, :width => 1024, :height => 500 %>
+  <dl>
+    <dt>Title</dt> <dd><%= @slider.title %></dd>
+    <dt>Text</dt> <dd><%= @slider.text %></dd>
+    <dt>Link</dt> <dd><%= link_to @slider.link, @slider.link %></dd>
+  </dl>
+  <p><%= link_to 'Edit', edit_slider_path(@slider) %> <%= link_to 'Back', sliders_path %></p>
+</section>

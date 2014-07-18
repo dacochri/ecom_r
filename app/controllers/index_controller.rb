@@ -1,6 +1,7 @@
 class IndexController < ApplicationController
   def index
     @top_level_categories = Category.where(category_id: nil)
+    @sliders = Slider.all.limit(3).order('id DESC')
   end
 
   def blog

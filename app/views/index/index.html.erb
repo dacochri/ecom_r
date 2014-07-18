@@ -14,21 +14,13 @@
   </ul>
 </section>
 <div id="slider">
-  <section>
-    <h2><a href="/">Slider 1</a></h2>
-    <p>Forest Trail</p>
-    <%= image_tag "slider/1.jpg" %>
-  </section>
-  <section>
-    <h2><a href="/">Slider 2</a></h2>
-    <p>Moonlit Road</p>
-    <%= image_tag "slider/2.jpg" %>
-  </section>
-  <section>
-    <h2><a href="/">Slider 3</a></h2>
-    <p>Moss-covered Bridge</p>
-    <%= image_tag "slider/3.jpg" %>
-  </section>
+  <% @sliders.each do |slider| %>
+    <section>
+      <h2><a href="<%= slider.link %>"><%= slider.title %></a></h2>
+      <p><%= slider.text %></p>
+      <%= image_tag "sliders/#{slider.image}" %>
+    </section>
+  <% end %>
 </div>
 <!-- new items -->
 <!-- discount items -->

@@ -17,3 +17,7 @@ Category.create(category_id: nil, name: 'Accessories')
   Category.create(category_id: 16, name: 'Watches')
 
 Product.create(category_id: 2, name: 'Slim Fit Shirt in Stretch Cotton Poplin', image: '38389881bd.jpg', price: '507.00', manufacturer: 'Emporio Armani', quantity: 1, description: 'Composition: 78% Cotton, 28% Polyamide, 2% Elastane')
+
+Slider.create(title: 'Slider 1', text: 'Forest Trail', image: '1.jpg', link: '/')
+Slider.create(title: 'Slider 2', text: 'Moonlit Road', image: '2.jpg', link: '/')
+Slider.create(title: 'Slider 3', text: 'Moss-covered Bridge', image: '3.jpg', link: '/')

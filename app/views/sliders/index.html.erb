@@ -1,0 +1,30 @@
+<section>
+  <h2>Listing Sliders</h2>
+  <p><%= link_to 'New Slider', new_slider_path %></p>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Text</th>
+        <th scope="col">Image</th>
+        <th scope="col">Link</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sliders.each do |slider| %>
+      <tr>
+        <td><%= slider.title %></td>
+        <td><%= slider.text %></td>
+        <td><%= link_to slider.image, "assets/sliders/#{slider.image}" %></td>
+        <td><%= link_to slider.link, slider.link %></td>
+        <td>
+          <%= link_to 'Show', slider %>
+          <%= link_to 'Edit', edit_slider_path(slider) %>
+          <%= link_to 'Destroy', slider, method: :delete, data: { confirm: "Are you sure you want to delete #{slider.title}?" } %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
