@@ -77,17 +77,20 @@ $main-color-on-white: darken($main-color, 0%);
   }
 }
 
+$slider-height: 18.8rem;
+
 #slider{
-  margin: 0;
-  padding: 0;
-  width: 74.6rem;
+  margin: $small 0 0 0;
+  padding: $small;
+  width: 73.6rem;
   position: relative;
   top: -20.7rem;
   left: 27.5rem;
+  border: 0.1rem solid #000;
 
   section{
-    width: 74.6rem;
-    height: 21rem;
+    width: 73.6rem;
+    height: $slider-height;
     position: relative;
     
     h2, p{
@@ -134,7 +137,7 @@ $main-color-on-white: darken($main-color, 0%);
 
 // Show all if JS is disabled, otherwise hide & stack them
 .slider{
-  height: 21rem;
+  height: $slider-height;
   overflow: hidden;
 
   section{
@@ -145,11 +148,11 @@ $main-color-on-white: darken($main-color, 0%);
     }
     
     &:nth-child(2){
-      top: -21rem;
+      top: -($slider-height);
     }
 
     &:nth-child(3){
-      top: -42rem;
+      top: -($slider-height * 2);
     }
   }
 }
