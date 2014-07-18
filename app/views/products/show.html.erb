@@ -4,7 +4,7 @@
     <p id="notice"><%= notice %></p>
   <% end %>
   <% unless @product.image.blank? %>
-    <%= image_tag @product.image, :alt => @product.name, :class => 'product-image' %>
+    <%= image_tag "products/#{@product.image}", :alt => @product.name, :class => 'product-image' %>
   <% else %>
     <div class="image-not-found">?</div>
   <% end %>
