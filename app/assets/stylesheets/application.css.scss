@@ -250,6 +250,7 @@ header{
 }
 
 #content{
+  padding: $medium $small;
 
   h2, h3, h4, h5, h6{
     margin: 0.5rem 0;
@@ -413,7 +414,7 @@ table{
 }
 
 .right{
-  flaot: right;
+  float: right;
 }
 
 .clear{
@@ -438,6 +439,7 @@ span.logo{
 .product-image{
   float: left;
   max-width: 25rem;
+  border: 0.1rem solid #999;
 }
 
 .image-not-found{
