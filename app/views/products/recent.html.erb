@@ -1,0 +1,11 @@
+<section id="recent">
+  <h2>Recent Arrivals</h2>
+  <% @products.each do |product| %>
+    <div class="recent">
+      <a href="<%= product.id %>">
+        <%= image_tag "products/#{product.image}", :alt => product.name %>
+      </a>
+      <p><%= link_to product.name.truncate(18), "#{product.id}" %><span><%= number_to_currency(product.price) %></span></p>
+    </div>
+  <% end %>
+</section>

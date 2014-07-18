@@ -17,6 +17,11 @@ Category.create(category_id: nil, name: 'Accessories')
   Category.create(category_id: 16, name: 'Watches')
 
 Product.create(category_id: 2, name: 'Slim Fit Shirt in Stretch Cotton Poplin', image: '38389881bd.jpg', price: '507.00', manufacturer: 'Emporio Armani', quantity: 1, description: 'Composition: 78% Cotton, 28% Polyamide, 2% Elastane')
+Product.create(category_id: 6, name: 'Slim Fit Low Rise Jeans', image: '36553289ma.jpg', price: '410.00', manufacturer: 'Emporio Armani', quantity: 3, description: 'Composition: 98% Cotton, 2% Elastane')
+Product.create(category_id: 17, name: 'Watch Swiss Made Collection', image: '50154747su.jpg', price: '632.00', manufacturer: 'Emporio Armani', quantity: 2, description: '40mm case. Sunray finish on the case. Cabochon in smoky quartz.')
+Product.create(category_id: 7, name: 'Pinstripe Wool Trousers', image: '36555583lr.jpg', price: '670.00', manufacturer: 'Emporio Armani', quantity: 2, description: 'Composition: 100% Virgin Wool')
+Product.create(category_id: 3, name: 'Crew Neck T-shirt in Cotton Pique', image: '37578693WT.jpg', price: '237.00', manufacturer: 'Emporio Armani', quantity: 4, description: 'Composition: 100% Cotton')
+Product.create(category_id: 2, name: 'Jersey Shirt with Shawl Collar', image: '38389895EI.jpg', price: '410.00', manufacturer: 'Emporio Armani', quantity: 2, description: 'Composition: 100% Cotton')
 
 Slider.create(title: 'Slider 1', text: 'Forest Trail', image: '1.jpg', link: '/')
 Slider.create(title: 'Slider 2', text: 'Moonlit Road', image: '2.jpg', link: '/')

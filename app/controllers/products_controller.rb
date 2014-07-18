@@ -71,6 +71,10 @@ class ProductsController < ApplicationController
     @products = Product.where(category_id: params[:id])
   end
 
+  def recent
+    @products = Product.where(['created_at > ?', Time.now-7.days]).order('created_at DESC')
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

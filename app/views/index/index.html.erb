@@ -18,9 +18,21 @@
     <section>
       <h2><a href="<%= slider.link %>"><%= slider.title %></a></h2>
       <p><%= slider.text %></p>
-      <%= image_tag "sliders/#{slider.image}" %>
+      <%= image_tag "sliders/#{slider.image}", :alt => slider.text %>
     </section>
   <% end %>
 </div>
-<!-- new items -->
+<div class="clear"></div>
+<section id="recent">
+  <h2>Recent Arrivals</h2>
+  <% @recent_products.each do |rp| %>
+    <div class="recent">
+      <a href="products/<%= rp.id %>">
+        <%= image_tag "products/#{rp.image}", :alt => rp.name %>
+      </a>
+      <p><%= link_to rp.name.truncate(18), "products/#{rp.id}" %><span><%= number_to_currency(rp.price) %></span></p>
+    </div>
+  <% end %>
+  <p><a href="products/recent">See All &raquo;</p>
+</section>
 <!-- discount items -->

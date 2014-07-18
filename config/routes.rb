@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  resources :sliders
-
-  resources :products
-  resources :categories
-  
   get 'products/by_category/:id' => 'products#by_category'
+  get 'products/recent' => 'products#recent'
 
   get 'blog' => 'index#blog', :as => :blog
   get 'search' => 'index#search', :as => :search
   get 'about' => 'index#about', :as => :about
   get 'contact' => 'index#contact', :as => :contact
 
+  resources :sliders
+  resources :products
+  resources :categories
+  
   root :to => 'index#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
