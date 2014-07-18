@@ -1,8 +1,11 @@
 $ ->
   nextImage = ->
     removeClasses true
-    addClasses img
-    (if (img is 3) then img = 1 else img++)
+    addClasses window.img
+    if window.img is 3
+      window.img = 1
+    else
+      window.img++
     return
   removeClasses = ->
     first.removeClass 'active'
@@ -24,6 +27,6 @@ $ ->
   third = $('#slider section:nth-child(3)')
   slider.addClass 'slider'
   first.addClass 'active'
-  img = 1
-  timer = setInterval(nextImage, 4000)
+  window.img = 1
+  timer = setInterval(nextImage, 8000)
   return
