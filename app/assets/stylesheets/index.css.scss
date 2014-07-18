@@ -25,6 +25,8 @@ $main-color-on-white: darken($main-color, 0%);
   background-color: #333;
   width: 12.5rem;
   padding-bottom: 0.2rem;
+  position: relative;
+  z-index: 3;
 
   h2{
     padding: $small;
@@ -71,6 +73,83 @@ $main-color-on-white: darken($main-color, 0%);
           }
         }
       }
+    }
+  }
+}
+
+#slider{
+  margin: 0;
+  padding: 0;
+  width: 74.6rem;
+  position: relative;
+  top: -20.7rem;
+  left: 27.5rem;
+
+  section{
+    width: 74.6rem;
+    height: 21rem;
+    position: relative;
+    
+    h2, p{
+      position: absolute;
+      z-index: 2;
+      display: inline-block;
+      padding: $small $medium;
+      background-color: #000;
+      opacity: 0.7;
+    }
+
+    h2{
+
+      a{
+        color: #FFF;
+
+        &:link, &:visited{
+          border-bottom: 0.1rem dotted #FFF;
+        }
+
+        &:hover, &:active, &:focus{
+          border-bottom: 0.1rem solid #FFF;
+        }
+      }
+    }
+    
+    p{
+      color: #FFF;
+      right: 0;
+      bottom: 0;
+    }
+    
+    img{
+      height: 100%;
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+// Show all if JS is disabled, otherwise hide & stack them
+.slider{
+  height: 21rem;
+  overflow: hidden;
+
+  section{
+    visibility: hidden;
+
+    &.active{
+      visibility: visible;
+    }
+    
+    &:nth-child(2){
+      top: -21rem;
+    }
+
+    &:nth-child(3){
+      top: -42rem;
     }
   }
 }
