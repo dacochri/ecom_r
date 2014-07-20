@@ -137,6 +137,19 @@ dl{
   }
 }
 
+a{
+  color: #FFF;
+  text-decoration: none;
+
+  &:link, &:visited{
+    border-bottom: 0.1rem dotted #FFF;
+  }
+
+  &:hover, &:active, &:focus{
+    border-bottom: 0.1rem solid #FFF;
+  }
+}
+
 // Content Areas
 
 .extend{
@@ -203,6 +216,17 @@ header{
 
         &:last{
           margin-right: 0;
+        }
+
+        a{
+          
+          &:link, &:visited{
+            border: 0;
+          }
+
+          &:hover, &:active, &:focus{
+            border: 0;
+          }
         }
       }
     }
