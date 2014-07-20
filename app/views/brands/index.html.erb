@@ -1,0 +1,24 @@
+<section>
+  <h2>Listing Brands</h2>
+  <p><%= link_to 'New Brand', new_brand_path %></p>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @brands.each do |brand| %>
+        <tr>
+          <td><%= brand.name %></td>
+          <td>
+            <%= link_to 'Show', brand %>
+            <%= link_to 'Edit', edit_brand_path(brand) %>
+            <%= link_to 'Destroy', brand, method: :delete, data: { confirm: "Are you sure you want to delete brand: #{brand.name}?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

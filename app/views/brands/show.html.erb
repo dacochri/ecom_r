@@ -1,0 +1,10 @@
+<section>
+  <h2>Show Brand <%= @brand.id %></h2>
+  <% unless notice.blank? %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+  <dl>
+    <dt>Name</dt> <dd><%= @brand.name %></dd>
+  </dl>
+  <p><%= link_to 'Edit', edit_brand_path(@brand) %> <%= link_to 'Back', brands_path %></p>
+</section>
