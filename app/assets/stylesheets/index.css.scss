@@ -157,7 +157,7 @@ $slider-height: 18.8rem;
   }
 }
 
-#recent{
+#recent, #discount{
   margin-top: $medium;
 
   h2{
@@ -168,66 +168,5 @@ $slider-height: 18.8rem;
   
   & > p{
     text-align: right;
-  }
-}
-
-.product-small{
-  width: 19.8rem;
-  padding: 0;
-  display: inline-block;
-  margin-left: 0.2rem;
-  margin-right: 0.2rem;
-  
-  & > a{
-    border: 0 !important;
-
-    &:link, &:visited{
-        
-    }
-      
-    &:hover, &:active, &:focus{
-      
-      img{
-        opacity: 0.7;
-      }
-    }
-      
-    img{
-      width: 100%;
-      border: 0.1rem solid #999;
-    }
-  }
-
-  p{
-    background-color: #333;
-    padding: $small;
-    margin: 0;
-    height: 2.4rem;
-    width: 19rem;
-
-    a{
-      color: #FFF !important;
-      border: 0 !important;
-      display: inline-block;
-      height: 2.3rem;
-      width: 12rem;
-      overflow: hidden;
-
-      &:hover, &:active, &:focus{
-        text-indent: -12rem;
-        transition: 3s;
-      }
-    }
-
-    span{
-      color: $accent-color;
-      float: right;
-    }
-
-    &:after{
-      clear: both;
-      content: " ";
-      display: hidden;
-    }
   }
 }
