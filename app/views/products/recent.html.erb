@@ -3,7 +3,11 @@
   <% @products.each do |product| %>
     <div class="product-small">
       <a href="<%= product.id %>">
-        <%= image_tag "products/#{product.image}", :alt => product.name %>
+        <% if product.image.blank? %>
+          <div class="image-not-found"><span>?</span></div>
+        <% else %>
+          <%= image_tag "products/#{product.image}", :alt => product.name %>
+        <% end %>
       </a>
       <p><%= link_to product.name, "#{product.id}" %><span><%= number_to_currency(product.price) %></span></p>
     </div>

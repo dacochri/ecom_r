@@ -6,7 +6,7 @@
   <% unless @product.image.blank? %>
     <%= image_tag "products/#{@product.image}", :alt => @product.name, :class => 'product-image' %>
   <% else %>
-    <div class="image-not-found">?</div>
+    <div class="image-not-found left"><span>?</span></div>
   <% end %>
   <dl class="left">
     <dt>Category</dt> <dd><%= Category.find(@product.category_id).name %></dd>
