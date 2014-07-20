@@ -26,7 +26,7 @@
 <section id="recent">
   <h2>Recent Arrivals</h2>
   <% @recent_products.each do |rp| %>
-    <div class="recent">
+    <div class="product-small">
       <a href="products/<%= rp.id %>">
         <%= image_tag "products/#{rp.image}", :alt => rp.name %>
       </a>
