@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20140720215006) do
 
   create_table "products", force: true do |t|
     t.integer  "category_id"
+    t.integer  "brand_id"
     t.string   "name"
     t.string   "image"
     t.decimal  "price"
-    t.string   "manufacturer"
     t.integer  "quantity"
     t.string   "description"
     t.datetime "created_at"

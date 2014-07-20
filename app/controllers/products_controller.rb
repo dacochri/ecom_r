@@ -17,12 +17,14 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @categories = Category.all
+    @brands = Brand.all
     render :layout => 'form'
   end
 
   # GET /products/1/edit
   def edit
     @categories = Category.all
+    @brands = Brand.all
     render :layout => 'form'
   end
 

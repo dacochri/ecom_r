@@ -27,8 +27,8 @@ $body-font: "Alegreya Sans", Arial, Helvetica, sans-serif;
 // F00 FF4000 FF8000 FFBF00 FF0 BFFF00 80FF00
 // 40FF00 0F0 00FF40 00FF80 00FFBF 0FF 00BFFF
 // 0080FF 0040FF 00F 4000FF 8000FF BF00FF F0F
-$main-color: #5F9FA8;
-$accent-color: #9C673A;
+$main-color: #78AB22;
+$accent-color: #FFF;
 $main-color-on-white: darken($main-color, 0%);
 
 @mixin clear-after{

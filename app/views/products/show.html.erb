@@ -10,9 +10,9 @@
   <% end %>
   <dl class="left">
     <dt>Category</dt> <dd><%= Category.find(@product.category_id).name %></dd>
+    <dt>Brand</dt> <dd><%= Brand.find(@product.brand_id).name %></dd>
     <dt>Name</dt> <dd><%= @product.name %></dd>
     <dt>Price</dt> <dd><%= number_to_currency(@product.price) %></dd>
-    <dt>Manufacturer</dt> <dd><%= @product.manufacturer %></dd>
     <dt>Quantity</dt> <dd><%= @product.quantity %></dd>
     <dt>Description</dt> <dd><%= @product.description %></dd>
   </dl>

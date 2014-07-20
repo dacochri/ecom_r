@@ -4,9 +4,9 @@
   <table>
     <thead>
       <tr>
-        <th scope="col">Manufacturer</th>
-        <th scope="col">Name</th>
         <th scope="col">Category</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Name</th>
         <th scope="col">Image</th>
         <th scope="col">Price</th>
         <th scope="col">Quantity</th>
@@ -17,11 +17,10 @@
     <tbody>
       <% @products.each do |product| %>
         <tr>
-          <td><%= product.manufacturer %></td>
+          <td><%= Category.find(product.category_id).name %></td>
+          <td><%= Brand.find(product.brand_id).name %></td>
           <td><%= product.name.truncate(15) %></td>
-          <% category = Category.find(product.category_id) %>
-          <td><%= category.name %></td>
-          <td><%= link_to product.image, "assets/products/#{product.image}" %></td>
+          <td><%= link_to product.image.truncate(13), "assets/products/#{product.image}" %></td>
           <td><%= number_to_currency(product.price) %></td>
           <td><%= product.quantity %></td>
           <td><%= product.description.truncate(15) %></td>
