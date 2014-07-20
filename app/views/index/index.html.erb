@@ -28,11 +28,18 @@
   <% @recent_products.each do |rp| %>
     <div class="product-small">
       <a href="products/<%= rp.id %>">
-        <%= image_tag "products/#{rp.image}", :alt => rp.name %>
+        <% if rp.image.blank? %>
+          <div class="image-not-found"><span>?</span></div>
+        <% else %>
+          <%= image_tag "products/#{rp.image}", :alt => rp.name %>
+        <% end %>
       </a>
       <p><%= link_to rp.name, "products/#{rp.id}" %><span><%= number_to_currency(rp.price) %></span></p>
     </div>
   <% end %>
   <p><a href="products/recent">See All &raquo;</p>
 </section>
-<!-- discount items -->
+<section id="discount">
+  <h2>On Sale</h2>
+  <p><a href="/">See All &raquo;</p>
+</section>
