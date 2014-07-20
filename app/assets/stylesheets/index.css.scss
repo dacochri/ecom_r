@@ -197,11 +197,21 @@ $slider-height: 18.8rem;
       background-color: #333;
       padding: $small;
       margin: 0;
+      height: 2.4rem;
       width: 19rem;
 
       a{
         color: #FFF;
-        border-color: #FFF;
+        border: 0;
+        display: inline-block;
+        height: 2.3rem;
+        width: 12rem;
+        overflow: hidden;
+
+        &:hover, &:active, &:focus{
+          text-indent: -12rem;
+          transition: all 3s ease-in-out;
+        }
       }
 
       span{
