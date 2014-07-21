@@ -466,12 +466,35 @@ span.logo{
   border: 0.1rem solid #999;
 }
 
+.image-not-found{
+  width: 18.8rem;
+  height: 28.8rem;
+  background-color: darken(#FFF, 5%);
+  border: 0.1rem solid #999;
+  position: relative;
+
+  span{
+    color: #666;
+    font-size: 6rem;
+    font-weight: bold;
+    text-align: center;
+    height: 7.2rem;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
 .product-small{
   width: 19.8rem;
   padding: 0;
   display: inline-block;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
+  position: relative;
   
   & > a{
     border: 0 !important;
@@ -527,28 +550,6 @@ span.logo{
   }
 }
 
-.image-not-found{
-  width: 18.8rem;
-  height: 28.8rem;
-  background-color: darken(#FFF, 5%);
-  border: 0.1rem solid #999;
-  position: relative;
-
-  span{
-    color: #666;
-    font-size: 6rem;
-    font-weight: bold;
-    text-align: center;
-    height: 7.2rem;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-}
-
 .original-price{
   text-decoration: line-through;
   color: #BB574E !important;
@@ -558,4 +559,27 @@ span.logo{
   background-color: #2D2D2D !important;
   color: $main-color;
   text-align: right;
+}
+
+.discount-amount{
+  display: inline-block;
+  background-color: #2D2D2D;
+  color: #999;
+  padding: $small;
+  padding-left: 2.5rem;
+  position: absolute;
+  top: $medium;
+  right: -0.1rem;
+  z-index: 2;
+  text-align: right;
+
+  .attention{
+    color: #BB574E;
+    font-size: $large * 2;
+    display: inline-block;
+    height: $large;
+    position: absolute;
+    top: 0.4rem;
+    left: $small;
+  }
 }

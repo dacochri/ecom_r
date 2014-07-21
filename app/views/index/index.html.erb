@@ -44,6 +44,7 @@
   <% @discounts.each do |discount| %>
     <% product = Product.find(discount.product_id) %>
     <div class="product-small">
+      <span class="discount-amount"><span class="attention">*</span><%= format_discount_amount(discount) %></span>
       <a href="products/<%= product.id %>">
         <% if product.image.blank? %>
           <div class="image-not-found"><span>?</span></div>
