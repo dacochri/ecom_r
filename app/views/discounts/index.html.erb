@@ -4,24 +4,22 @@
   <table>
     <thead>
       <tr>
-        <th scope="col">Reference</th>
-        <th scope="col">Reference To</th>
+        <th scope="col">Product</th>
         <th scope="col">Value</th>
         <th scope="col">Discount Type</th>
-        <th scope="col">Start</th>
-        <th scope="col">End</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <% @discounts.each do |discount| %>
         <tr>
-          <td><%= get_reference(discount).name.truncate(15) %></td>
-          <td><%= discount.reference_to %></td>
-          <td><%= format_value(discount) %></td>
+          <td><%= Product.find(discount.product_id).name.truncate(15) %></td>
+          <td><%= format_discount_value(discount) %></td>
           <td><%= discount.discount_type %></td>
-          <td><%= format_time(discount.start) %></td>
-          <td><%= format_time(discount.end) %></td>
+          <td><%= format_time(discount.start_date) %></td>
+          <td><%= format_time(discount.end_date) %></td>
           <td>
             <%= link_to 'Show', discount %>
             <%= link_to 'Edit', edit_discount_path(discount) %>

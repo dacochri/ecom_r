@@ -548,3 +548,14 @@ span.logo{
     left: 0;
   }
 }
+
+.original-price{
+  text-decoration: line-through;
+  color: #BB574E !important;
+}
+
+.discount-price{
+  background-color: #2D2D2D !important;
+  color: $main-color;
+  text-align: right;
+}

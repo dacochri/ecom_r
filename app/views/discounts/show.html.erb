@@ -4,12 +4,11 @@
     <p id="notice"><%= notice %></p>
   <% end %>
   <dl>
-    <dt>Reference</dt> <dd><%= get_reference(@discount).name %></dd>
-    <dt>Reference to</dt> <dd><%= @discount.reference_to %></dd>
-    <dt>Value</dt> <dd><%= format_value(@discount) %></dd>
+    <dt>Product</dt> <dd><%= Product.find(@discount.product_id).name %></dd>
+    <dt>Value</dt> <dd><%= format_discount_value(@discount) %></dd>
     <dt>Discount type</dt> <dd><%= @discount.discount_type %></dd>
-    <dt>Start</dt> <dd><%= format_time(@discount.start) %></dd>
-    <dt>End</dd> <dd><%= format_time(@discount.end) %></dd>
+    <dt>Start</dt> <dd><%= format_time(@discount.start_date) %></dd>
+    <dt>End</dd> <dd><%= format_time(@discount.end_date) %></dd>
   </dl>
   <p><%= link_to 'Edit', edit_discount_path(@discount) %> <%= link_to 'Back', discounts_path %></p>
 </section>

@@ -25,21 +25,35 @@
 <div class="clear"></div>
 <section id="recent">
   <h2>Recent Arrivals</h2>
-  <% @recent_products.each do |rp| %>
+  <% @recent_products.each do |product| %>
     <div class="product-small">
-      <a href="products/<%= rp.id %>">
-        <% if rp.image.blank? %>
+      <a href="products/<%= product.id %>">
+        <% if product.image.blank? %>
           <div class="image-not-found"><span>?</span></div>
         <% else %>
-          <%= image_tag "products/#{rp.image}", :alt => rp.name %>
+          <%= image_tag "products/#{product.image}", :alt => product.name %>
         <% end %>
       </a>
-      <p><%= link_to rp.name, "products/#{rp.id}" %><span><%= number_to_currency(rp.price) %></span></p>
+      <p><%= link_to product.name, "products/#{product.id}" %><span><%= number_to_currency(product.price) %></span></p>
     </div>
   <% end %>
   <p><a href="products/recent">See All &raquo;</p>
 </section>
 <section id="discount">
   <h2>On Sale</h2>
+  <% @discounts.each do |discount| %>
+    <% product = Product.find(discount.product_id) %>
+    <div class="product-small">
+      <a href="products/<%= product.id %>">
+        <% if product.image.blank? %>
+          <div class="image-not-found"><span>?</span></div>
+        <% else %>
+          <%= image_tag "products/#{product.image}", :alt => product.name %>
+        <% end %>
+      </a>
+      <p><%= link_to product.name, "products/#{product.id}" %><span class="original-price"><%= number_to_currency(product.price) %></span></p>
+      <p class="discount-price"><%= calculate_discount_price(product, discount) %></p>
+    </div>
+  <% end %>
   <p><a href="discounts/current">See All &raquo;</p>
 </section>

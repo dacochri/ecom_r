@@ -27,12 +27,11 @@ ActiveRecord::Schema.define(version: 20140720225014) do
   end
 
   create_table "discounts", force: true do |t|
-    t.integer  "reference"
-    t.string   "reference_to"
+    t.integer  "product_id"
     t.decimal  "value"
     t.string   "discount_type"
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

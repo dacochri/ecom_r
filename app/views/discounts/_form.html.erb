@@ -10,17 +10,15 @@
     </section>
   <% end %>
 
-  <%= f.label :reference %>
-  <%= f.number_field :reference %>
-  <%= f.label :reference_to %>
-  <%= f.select :reference_to, ['category', 'brand', 'product'] %>
+  <%= f.label :product_id %>
+  <%= f.number_field :product_id %>
   <%= f.label :value %>
   <%= f.text_field :value %>
   <%= f.label :discount_type %>
-  <%= f.text_field :discount_type %>
-  <%= f.label :start %>
-  <%= f.text_field :start, :placeholder => 'YYYY-MM-DD HH:MM:SS' %>
-  <%= f.label :end %>
-  <%= f.text_field :end, :placeholder => 'YYYY-MM-DD HH:MM:SS' %>
+  <%= f.select :discount_type, ['%', '$'] %>
+  <%= f.label :start_date %>
+  <%= f.text_field :start_date, :placeholder => 'YYYY-MM-DD HH:MM:SS' %>
+  <%= f.label :end_date %>
+  <%= f.text_field :end_date, :placeholder => 'YYYY-MM-DD HH:MM:SS' %>
   <%= f.submit %>
 <% end %>
