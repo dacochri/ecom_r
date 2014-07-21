@@ -1,0 +1,26 @@
+<%= form_for(@discount) do |f| %>
+  <% if @discount.errors.any? %>
+    <section id="error_explanation">
+      <h2><%= pluralize(@discount.errors.count, "error") %> prohibited this discount from being saved:</h2>
+      <ul>
+      <% @discount.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <%= f.label :reference %>
+  <%= f.number_field :reference %>
+  <%= f.label :reference_to %>
+  <%= f.select :reference_to, ['category', 'brand', 'product'] %>
+  <%= f.label :value %>
+  <%= f.text_field :value %>
+  <%= f.label :discount_type %>
+  <%= f.text_field :discount_type %>
+  <%= f.label :start %>
+  <%= f.text_field :start, :placeholder => 'YYYY-MM-DD HH:MM:SS' %>
+  <%= f.label :end %>
+  <%= f.text_field :end, :placeholder => 'YYYY-MM-DD HH:MM:SS' %>
+  <%= f.submit %>
+<% end %>

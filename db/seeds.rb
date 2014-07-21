@@ -16,6 +16,10 @@ Category.create(category_id: nil, name: 'Shoes')
 Category.create(category_id: nil, name: 'Accessories')
   Category.create(category_id: 16, name: 'Watches')
 
+Slider.create(title: 'Slider 1', text: 'Forest Trail', image: '1.jpg', link: '/')
+Slider.create(title: 'Slider 2', text: 'Moonlit Road', image: '2.jpg', link: '/')
+Slider.create(title: 'Slider 3', text: 'Moss-covered Bridge', image: '3.jpg', link: '/')
+
 Brand.create(name: 'Emporio Armani')
 Brand.create(name: 'Hurley')
 
@@ -27,6 +31,6 @@ Product.create(category_id: 3, brand_id: 1, name: 'Crew Neck T-shirt in Cotton P
 Product.create(category_id: 2, brand_id: 1, name: 'Jersey Shirt with Shawl Collar', image: '38389895EI.jpg', price: '410.00', quantity: 2, description: 'Composition: 100% Cotton')
 Product.create(category_id: 3, brand_id: 2, name: 'One & Only Push Thru', image: 'MTS0008680.jpg', price: '25.00', quantity: 2, description: 'Color: Heather Black')
 
-Slider.create(title: 'Slider 1', text: 'Forest Trail', image: '1.jpg', link: '/')
-Slider.create(title: 'Slider 2', text: 'Moonlit Road', image: '2.jpg', link: '/')
-Slider.create(title: 'Slider 3', text: 'Moss-covered Bridge', image: '3.jpg', link: '/')
+Discount.create(reference: 2, reference_to: 'brand', value: 10.00, discount_type: '%', start: '2014-07-20 12:01:00', end: '2014-07-30 00:01:00')
+Discount.create(reference: 2, reference_to: 'category', value: 33.00, discount_type: '%', start: '2014-07-20 12:01:00', end: '2014-07-30 00:01:00')
+Discount.create(reference: 5, reference_to: 'product', value: 50.00, discount_type: '$', start: '2014-07-20 12:01:00', end: '2014-07-30 00:01:00')

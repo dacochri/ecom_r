@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'discounts/current' => 'discounts#current'
+  
   get 'products/by_category/:id' => 'products#by_category'
   get 'products/recent' => 'products#recent'
 
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   get 'about' => 'index#about', :as => :about
   get 'contact' => 'index#contact', :as => :contact
 
+  resources :discounts
   resources :brands
   resources :sliders
   resources :products
