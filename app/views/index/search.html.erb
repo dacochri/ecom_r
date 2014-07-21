@@ -1,6 +1,6 @@
 <section id="search">
   <h2>Search</h2>
-  <p>Search results for: <%= params[:search] %></p>
+  <p>Search results for: <%= params[:search] %>. Returned <%= @products.size %> results.</p>
   <% @products.each do |product| %>
     <div class="product-small">
       <a href="products/<%= product.id %>">
