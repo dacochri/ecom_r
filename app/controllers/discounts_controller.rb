@@ -64,7 +64,7 @@ class DiscountsController < ApplicationController
   end
   
   def current
-
+    @discounts = Discount.where(['start_date < ? AND end_date > ?', Time.now, Time.now]).order('created_at DESC')
   end
 
   private

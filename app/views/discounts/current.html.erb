@@ -1,3 +1,18 @@
-<section>
+<section id="discount">
   <h2>Current Discounts</h2>
+  <% @discounts.each do |discount| %>
+    <% product = Product.find(discount.product_id) %>
+    <div class="product-small">
+      <span class="discount-amount"><span class="attention">*</span><%= format_discount_amount(discount) %></span>
+      <a href="products/<%= product.id %>">
+        <% if product.image.blank? %>
+          <div class="image-not-found"><span>?</span></div>
+        <% else %>
+          <%= image_tag "products/#{product.image}", :alt => product.name %>
+        <% end %>
+      </a>
+      <p><%= link_to product.name, "products/#{product.id}" %><span class="original-price"><%= number_to_currency(product.price) %></span></p>
+      <p class="discount-price"><%= calculate_discount_price(product, discount) %></p>
+    </div>
+  <% end %>
 </section>
