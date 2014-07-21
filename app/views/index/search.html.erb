@@ -1,3 +1,16 @@
-<section>
-  <h2>index/search</h2>
+<section id="search">
+  <h2>Search</h2>
+  <p>Search results for: <%= params[:search] %></p>
+  <% @products.each do |product| %>
+    <div class="product-small">
+      <a href="products/<%= product.id %>">
+        <% if product.image.blank? %>
+          <div class="image-not-found"><span>?</span></div>
+        <% else %>
+          <%= image_tag "products/#{product.image}", :alt => product.name %>
+        <% end %>
+      </a>
+      <p><%= link_to product.name, "products/#{product.id}" %><span><%= number_to_currency(product.price) %></span></p>
+    </div>
+  <% end %>
 </section>

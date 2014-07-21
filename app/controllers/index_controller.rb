@@ -11,7 +11,7 @@ class IndexController < ApplicationController
   end
 
   def search
-
+    @products = Product.where('name LIKE :search', search: "%#{params[:search]}%")
   end
 
   def about

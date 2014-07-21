@@ -488,7 +488,7 @@ span.logo{
   }
 }
 
-#recent, #discount, #by-category{
+#recent, #discount, #by-category, #search{
   margin-top: $medium;
 
   h2{
@@ -499,6 +499,13 @@ span.logo{
   
   & > p{
     text-align: right;
+  }
+}
+
+#search{
+
+  & > p{
+    text-align: left;
   }
 }
 
