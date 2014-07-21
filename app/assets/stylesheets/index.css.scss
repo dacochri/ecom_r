@@ -156,17 +156,3 @@ $slider-height: 18.8rem;
     }
   }
 }
-
-#recent, #discount{
-  margin-top: $medium;
-
-  h2{
-    background-color: #333;
-    color: $main-color;
-    padding: 0 $small;
-  }
-  
-  & > p{
-    text-align: right;
-  }
-}

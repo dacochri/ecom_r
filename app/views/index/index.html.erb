@@ -37,7 +37,7 @@
       <p><%= link_to product.name, "products/#{product.id}" %><span><%= number_to_currency(product.price) %></span></p>
     </div>
   <% end %>
-  <p><a href="products/recent">See All &raquo;</p>
+  <p><a href="products/recent">See All &raquo;</a></p>
 </section>
 <section id="discount">
   <h2>On Sale</h2>
@@ -56,5 +56,5 @@
       <p class="discount-price"><%= calculate_discount_price(product, discount) %></p>
     </div>
   <% end %>
-  <p><a href="discounts/current">See All &raquo;</p>
+  <p><a href="discounts/current">See All &raquo;</a></p>
 </section>
