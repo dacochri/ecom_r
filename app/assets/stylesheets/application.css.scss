@@ -464,6 +464,8 @@ span.logo{
   color: $main-color;
 }
 
+// Product display
+
 .product-image{
   float: left;
   max-width: 25rem;
@@ -563,7 +565,7 @@ span.logo{
     }
 
     span{
-      color: $accent-color;
+      color: #999;
       float: right;
     }
 
