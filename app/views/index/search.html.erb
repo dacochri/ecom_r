@@ -1,8 +1,12 @@
 <section id="search">
   <h2>Search</h2>
-  <p>Search results for: <%= params[:search] %>. Returned <%= @products.size %> results.</p>
+  <p>Search results for: <%= params[:search] %>. Returned <%= @products.size %> result<%= @products.size == 1 ? '' : 's' %>.</p>
   <% @products.each do |product| %>
+    <% discount = Discount.where(product_id: product.id).where('start_date < ?', Time.now).where('end_date > ?', Time.now).first %>
     <div class="product-small">
+      <% unless discount.blank? %>  
+        <span class="discount-amount"><span class="attention">*</span><%= format_discount_amount(discount) %></span>
+      <% end %>
       <a href="products/<%= product.id %>">
         <% if product.image.blank? %>
           <div class="image-not-found"><span>?</span></div>
@@ -10,7 +14,12 @@
           <%= image_tag "products/#{product.image}", :alt => product.name %>
         <% end %>
       </a>
-      <p><%= link_to product.name, "products/#{product.id}" %><span><%= number_to_currency(product.price) %></span></p>
+      <p><%= link_to product.name, "products/#{product.id}" %><span class="<%= 'original-price' unless discount.blank? %>"><%= number_to_currency(product.price) %></span></p>
+      <% unless discount.blank? %>  
+        <p class="discount-price"><%= calculate_discount_price(product, discount) %></p>
+      <% else %>
+        <p class="discount-price" style="visibility: hidden;">.</p>
+      <% end %>
     </div>
   <% end %>
 </section>
