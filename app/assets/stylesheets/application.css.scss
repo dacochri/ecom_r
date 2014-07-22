@@ -445,6 +445,10 @@ table{
   clear: both;
 }
 
+.hidden{
+  visibility: hidden;
+}
+
 span.logo{
   color: $main-color;
   font-size: 4rem;

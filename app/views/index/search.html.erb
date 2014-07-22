@@ -14,11 +14,20 @@
           <%= image_tag "products/#{product.image}", :alt => product.name %>
         <% end %>
       </a>
-      <p><%= link_to product.name, "products/#{product.id}" %><span class="<%= 'original-price' unless discount.blank? %>"><%= number_to_currency(product.price) %></span></p>
+      <p>
+        <%= link_to product.name, "products/#{product.id}" %>
+        <% if discount.blank? %>
+          <span>
+        <% else %>
+          <span class="original-price">
+        <% end %>
+          <%= number_to_currency(product.price) %>
+        </span>
+      </p>
       <% unless discount.blank? %>  
         <p class="discount-price"><%= calculate_discount_price(product, discount) %></p>
       <% else %>
-        <p class="discount-price" style="visibility: hidden;">.</p>
+        <p class="discount-price hidden">No discount.</p>
       <% end %>
     </div>
   <% end %>
