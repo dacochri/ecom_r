@@ -1,0 +1,12 @@
+<section>
+  <h2>Show Order_item <%= @order_item.id %></h2>
+  <% unless notice.blank? %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+  <dl>
+    <dt>Order</dt> <dd><%= @order_item.order_id %></dd>
+    <dt>Product</dt> <dd><%= @order_item.product_id %></dd>
+    <dt>Quantity</dt> <dd><%= @order_item.quantity %></dd>
+  </dl>
+  <p><%= link_to 'Edit', edit_order_item_path(@order_item) %> <%= link_to 'Back', order_items_path %></p>
+</section>

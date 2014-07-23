@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'about' => 'index#about', :as => :about
   get 'contact' => 'index#contact', :as => :contact
 
+  resources :order_items
   resources :discounts
   resources :brands
   resources :sliders
