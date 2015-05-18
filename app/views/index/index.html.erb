@@ -6,7 +6,7 @@
       <% @sub_categories = Category.where(category_id: tlc.id) %>
         <% unless @sub_categories.blank? %><ul><% end %>
         <% @sub_categories.each do |sc| %>
-          <li><a href="/products/by_category/<%= sc.id %>"><%= sc.name %></a></li>
+          <li><a href="/products/category/<%= sc.id %>"><%= sc.name %></a></li>
         <% end %>
         <% unless @sub_categories.blank? %></ul><% end %>
       </li>
